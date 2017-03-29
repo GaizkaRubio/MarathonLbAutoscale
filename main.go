@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"log"
 	"encoding/csv"
-	"fmt"
 )
 
 func main() {
