@@ -1,7 +1,12 @@
 package marathon
 
-import "testing"
+import (
+	"testing"
+	"fmt"
+)
 
 func TestGetApps(*testing.T){
-	GetApps()
+	apps := GetApps()
+	fmt.Println(apps.Apps[0])
+	SetAppInstances(apps.Apps[0], 3)
 }
