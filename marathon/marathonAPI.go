@@ -34,7 +34,7 @@ func CreateApp(app MarathonApp) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	http.Post("http://localhost:8080/v2/apps","application/json",strings.NewReader(b))
+	http.Post("http://localhost:8080/v2/apps","application/json",strings.NewReader(string(b)))
 }
 
 func SetAppInstances(app MarathonApp, instances int) {
@@ -44,7 +44,7 @@ func SetAppInstances(app MarathonApp, instances int) {
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
-	request, err := http.NewRequest("PUT", "http://localhost:8080/v2/apps/"+app.ID, strings.NewReader(""))
+	request, err := http.NewRequest("PUT", "http://localhost:8080/v2/apps"+app.ID, strings.NewReader(""))
 	if err != nil {
 		log.Fatal(err)
 	}
