@@ -8,7 +8,7 @@ import (
 	"encoding/json"
 )
 
-var apps MarathonApp
+var maraApp MarathonApp
 
 func TestGetApps(*testing.T){
 	file, e := ioutil.ReadFile("resources/basicApp.json")
@@ -16,13 +16,17 @@ func TestGetApps(*testing.T){
 		fmt.Printf("File error: %v\n", e)
 		os.Exit(1)
 	}
-	error := json.Unmarshal(file,&apps)
+	error := json.Unmarshal(file,&maraApp)
 	if error != nil {
 		println(error)
 	}
-	CreateApp(apps)
+
+	fmt.Println(maraApp)
+
+	CreateApp(maraApp)
 	apps := GetApps()
 
 	fmt.Println(apps.Apps[0].ID)
- 	SetAppInstances(apps.Apps[0], 3)
+
+ 	SetAppInstances(maraApp, 3)
 }

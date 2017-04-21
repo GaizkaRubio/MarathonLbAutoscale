@@ -44,10 +44,12 @@ func SetAppInstances(app MarathonApp, instances int) {
 	//if err != nil {
 	//	log.Fatal(err)
 	//}
-	request, err := http.NewRequest("PUT", "http://localhost:8080/v2/apps"+app.ID, strings.NewReader(""))
+
+	request, err := http.NewRequest("PUT", "http://localhost:8080/v2/apps/"+app.ID, strings.NewReader("{\"instances\": 3}"))
 	if err != nil {
 		log.Fatal(err)
 	}
+	request.Header.Set("Content-Type", "application/json")
 	response, err := client.Do(request)
 	if err != nil {
 		log.Fatal(err)
