@@ -21,12 +21,11 @@ func TestGetApps(*testing.T){
 		println(error)
 	}
 
-	fmt.Println(maraApp)
-
 	CreateApp(maraApp)
-	apps := GetApps()
 
-	fmt.Println(apps.Apps[0].ID)
+	GetApps()
 
- 	SetAppInstances(maraApp, 3)
+ 	SetAppInstances(maraApp, 4)
+
+	DeleteApp(maraApp.ID)
 }
