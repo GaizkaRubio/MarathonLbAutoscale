@@ -70,3 +70,14 @@ services:
         - mesos-s
       cpu_shares: 154
 
+#  marathon-lb:
+#      image: mesosphere/marathon-lb
+#      container_name: marathon-lb
+#      hostname: marathon-lb
+#      ports:
+#        - 9090:9090
+#      environment:
+#        PORTS: 9090
+#      depends_on:
+#        - marathon
+#      cpu_shares: 154

@@ -27,5 +27,5 @@ func TestGetApps(*testing.T){
 
  	SetAppInstances(maraApp, 4)
 
-	DeleteApp(maraApp.ID)
+	//DeleteApp(maraApp.ID)
 }
